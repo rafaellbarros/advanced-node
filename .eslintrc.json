@@ -3,5 +3,9 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["dist"]
+  "ignorePatterns": ["dist"],
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/no-namespace": "off"
+  }
 }
