@@ -1,11 +1,46 @@
 {
-  "extends": "eslint-config-standard-with-typescript",
+  "extends": [
+    "eslint-config-standard-with-typescript",
+    "plugin:prettier/recommended"
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["dist"],
+  "ignorePatterns": ["dist", "node_modules"],
   "rules": {
     "@typescript-eslint/consistent-type-definitions": "off",
-    "@typescript-eslint/no-namespace": "off"
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/quotes": ["error", "single"],
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "none",
+          "requireLast": false
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ]
   }
 }
